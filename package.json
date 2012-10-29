@@ -1,0 +1,16 @@
+{ "name": "jwt-codec"
+, "private": true
+, "description": "JWT (JSON Web Token) encoding and decoding"
+, "author": "Dick Hardt <dickhardt@gmail.com>"
+, "version": "0.0.1"
+, "repository": 
+    { "type": "git"
+    , "url": "git://github.com/dickhardt/jwt-codec-node.git.git"
+    }
+, "engine": 
+    { "node": ">= 0.8.0"
+    }
+, "scripts":
+    { "test": "node test/test.js"
+    }
+}
