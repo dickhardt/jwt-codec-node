@@ -4,6 +4,7 @@
 */
 
 var jwt = require('../lib/jwt');
+var b64url = require('../lib/b64url');
 var assert = require('assert');
 
 var detailsHSA256 = 
@@ -19,11 +20,12 @@ var detailsHSA256 =
             109, 112, 108, 101, 46, 99, 111, 109, 47, 105, 115, 95, 114, 111,
             111, 116, 34, 58, 116, 114, 117, 101, 125] )
     , 'credentials': {'key':
-        Buffer( [3, 35, 53, 75, 43, 15, 165, 188, 131, 126, 6, 101, 119, 123, 166,
-           143, 90, 179, 40, 230, 240, 84, 201, 40, 169, 15, 132, 178, 210, 80,
-           46, 191, 211, 251, 90, 146, 210, 6, 71, 239, 150, 138, 180, 195, 119,
-           98, 61, 34, 61, 46, 33, 114, 5, 46, 79, 8, 192, 205, 154, 245, 103,
-           208, 128, 163] )}
+        b64url.safe(
+            Buffer([3, 35, 53, 75, 43, 15, 165, 188, 131, 126, 6, 101, 119, 123, 166,
+               143, 90, 179, 40, 230, 240, 84, 201, 40, 169, 15, 132, 178, 210, 80,
+               46, 191, 211, 251, 90, 146, 210, 6, 71, 239, 150, 138, 180, 195, 119,
+               98, 61, 34, 61, 46, 33, 114, 5, 46, 79, 8, 192, 205, 154, 245, 103,
+               208, 128, 163]).toString('base64') )}
     }
 var tokenHSA256 = "eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
 
@@ -46,7 +48,6 @@ assert.deepEqual( payload, detailsHSA256.payload)
 
 // test round trip with "alg":"none"
 
-
 var detailsNone =
     { 'header': {"typ":"JWT","alg":"none"}
     , 'payload': {"foo":"Alice", "bar":"Bob"}
@@ -55,4 +56,6 @@ var token = jwt.encode(detailsNone)
 var payload = jwt.decode(token, function (header) {
         return null;
     });
-assert.deepEqual( payload, detailsNone.payload)
+        assert.deepEqual( payload, detailsNone.payload)
+        
+        

@@ -1,0 +1,260 @@
+
+-------- Agent Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS256', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { passcode: true,
+        authorization: true,
+        returnURL: 'https://app.example.com/return',
+        resources: [Object] } },
+  credentials: { key: 'nWyeZJJcUHCWSlVI-4AQs1JnCwz7xd8gEHlOMD4_pYo' } }
+
+Agent Request length: 411
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc
+{ header: { typ: 'JWS', alg: 'HS256', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { passcode: true,
+        authorization: true,
+        returnURL: 'https://app.example.com/return',
+        resources: [Object] } },
+  signature: '7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc' }
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': 
+   { passcode: true,
+     authorization: true,
+     returnURL: 'https://app.example.com/return',
+     resources: [ 'people.bc.ca/details', 'health.bc.ca/number' ] } }
+
+-------- IX Token --------- 
+
+{ header: 
+   { typ: 'JWE',
+     alg: 'dir',
+     enc: 'A128CBC+HS256',
+     kid: 'DqDQ-rycvZwKNV6drtkIq2Y' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'as.example.com',
+     aud: 'ix.ca',
+     prn: 'nYXNwK6q9zGSTVB9s_TdeBmE6sfKq0xd1b1DVv_7aog',
+     'token.a2p3.org': 
+      { auth: [Object],
+        sig: '7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc' } },
+  credentials: { key: 'gj2twWrfqCpAVohMcFUjoCJErCLi6maKz73qySjEJOw' } }
+
+AS Token length: 495
+eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..y8OXIdl19rTSFRry3bbKFA.Y6rcmwaAtG_NKRreh0pdxzK6Zl93ZvIOF2Xb-h5Woj-rR1WDpJVEUL6l-CORjqYj1dasxDeeW4V-PZnLj5BmhPQ8nFnunw2aR5iUyIXu9cIUAIhOGa0tPL2zgN6BzrAP3rIAeiG9KBDCHRPrZArojpbtcMjaCpEomyDlWGy2vNUqgdG9B9HThsjFZ67FgP45ez9iy2rpq4A1qIhVU36fbcgh4OGzjyu5HOihc7qzqMalxvljyqV7hYluU70laEsZlN-4geMnlsndTtlznoWApdEl7Sq4MerycZTZERskoLkmMsmP77Qmglum-IjrmifS.aLJOpkiiujW8MdqxFZ09vWHOYmCkU8D__Pprb98L1vE
+{ iat: 1352841943,
+  iss: 'as.example.com',
+  aud: 'ix.ca',
+  prn: 'nYXNwK6q9zGSTVB9s_TdeBmE6sfKq0xd1b1DVv_7aog',
+  'token.a2p3.org': 
+   { auth: { nfc: false, passcode: true, authorization: true },
+     sig: '7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc' } }
+
+-------- IX Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS256', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..y8OXIdl19rTSFRry3bbKFA.Y6rcmwaAtG_NKRreh0pdxzK6Zl93ZvIOF2Xb-h5Woj-rR1WDpJVEUL6l-CORjqYj1dasxDeeW4V-PZnLj5BmhPQ8nFnunw2aR5iUyIXu9cIUAIhOGa0tPL2zgN6BzrAP3rIAeiG9KBDCHRPrZArojpbtcMjaCpEomyDlWGy2vNUqgdG9B9HThsjFZ67FgP45ez9iy2rpq4A1qIhVU36fbcgh4OGzjyu5HOihc7qzqMalxvljyqV7hYluU70laEsZlN-4geMnlsndTtlznoWApdEl7Sq4MerycZTZERskoLkmMsmP77Qmglum-IjrmifS.aLJOpkiiujW8MdqxFZ09vWHOYmCkU8D__Pprb98L1vE',
+        request: 'eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc' } },
+  credentials: { key: 'nWyeZJJcUHCWSlVI-4AQs1JnCwz7xd8gEHlOMD4_pYo' } }
+
+IX Request length: 1463
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJ0b2tlbiI6ImV5SjBlWEFpT2lKS1YwVWlMQ0poYkdjaU9pSmthWElpTENKbGJtTWlPaUpCTVRJNFEwSkRLMGhUTWpVMklpd2lhMmxrSWpvaVJIRkVVUzF5ZVdOMlduZExUbFkyWkhKMGEwbHhNbGtpZlEuLnk4T1hJZGwxOXJUU0ZScnkzYmJLRkEuWTZyY213YUF0R19OS1JyZWgwcGR4eks2Wmw5M1p2SU9GMlhiLWg1V29qLXJSMVdEcEpWRVVMNmwtQ09SanFZajFkYXN4RGVlVzRWLVBabkxqNUJtaFBROG5GbnVudzJhUjVpVXlJWHU5Y0lVQUloT0dhMHRQTDJ6Z042QnpyQVAzcklBZWlHOUtCRENIUlByWkFyb2pwYnRjTWphQ3BFb215RGxXR3kydk5VcWdkRzlCOUhUaHNqRlo2N0ZnUDQ1ZXo5aXkycnBxNEExcUloVlUzNmZiY2doNE9Hemp5dTVIT2loYzdxenFNYWx4dmxqeXFWN2hZbHVVNzBsYUVzWmxOLTRnZU1ubHNuZFR0bHpub1dBcGRFbDdTcTRNZXJ5Y1pUWkVSc2tvTGttTXNtUDc3UW1nbHVtLUlqcm1pZlMuYUxKT3BraWl1alc4TWRxeEZaMDl2V0hPWW1Da1U4RF9fUHByYjk4TDF2RSIsInJlcXVlc3QiOiJleUowZVhBaU9pSktWMU1pTENKaGJHY2lPaUpJVXpJMU5pSXNJbXRwWkNJNkltWXRlVGw2ZFZZd0xXdHllVXcxUkZaZmVGcHZJbjAuZXlKcFlYUWlPakV6TlRJNE5ERTVORE1zSW1semN5STZJbUZ3Y0M1bGVHRnRjR3hsTG1OdmJTSXNJbUYxWkNJNkltbDRMbU5oSWl3aWNtVnhkV1Z6ZEM1aE1uQXpMbTl5WnlJNmV5SndZWE56WTI5a1pTSTZkSEoxWlN3aVlYVjBhRzl5YVhwaGRHbHZiaUk2ZEhKMVpTd2ljbVYwZFhKdVZWSk1Jam9pYUhSMGNITTZMeTloY0hBdVpYaGhiWEJzWlM1amIyMHZjbVYwZFhKdUlpd2ljbVZ6YjNWeVkyVnpJanBiSW5CbGIzQnNaUzVpWXk1allTOWtaWFJoYVd4eklpd2lhR1ZoYkhSb0xtSmpMbU5oTDI1MWJXSmxjaUpkZlgwLjdrb0dncG9scnplZ2Mzdk5qV29VbXZ1VS1ZRnhVNkJCaEtOWHhzRUpxb2MifX0.akq0ktrxK92f27DAOPVRaKlQoOwzMjimUIaxDcG_iFA
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': 
+   { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..y8OXIdl19rTSFRry3bbKFA.Y6rcmwaAtG_NKRreh0pdxzK6Zl93ZvIOF2Xb-h5Woj-rR1WDpJVEUL6l-CORjqYj1dasxDeeW4V-PZnLj5BmhPQ8nFnunw2aR5iUyIXu9cIUAIhOGa0tPL2zgN6BzrAP3rIAeiG9KBDCHRPrZArojpbtcMjaCpEomyDlWGy2vNUqgdG9B9HThsjFZ67FgP45ez9iy2rpq4A1qIhVU36fbcgh4OGzjyu5HOihc7qzqMalxvljyqV7hYluU70laEsZlN-4geMnlsndTtlznoWApdEl7Sq4MerycZTZERskoLkmMsmP77Qmglum-IjrmifS.aLJOpkiiujW8MdqxFZ09vWHOYmCkU8D__Pprb98L1vE',
+     request: 'eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.7koGgpolrzegc3vNjWoUmvuU-YFxU6BBhKNXxsEJqoc' } }
+
+-------- RS Token --------- 
+
+{ header: 
+   { typ: 'JWE',
+     alg: 'dir',
+     enc: 'A128CBC+HS256',
+     kid: 'DqDQ-NVsXP5rdNcUPSAdRUoh' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'ix.ca',
+     aud: 'health.bc.ca',
+     prn: 'Kc3yf3Yuvot0XUPF7dvh36l5odgkuish26dLSdDyNd0',
+     'token.a2p3.org': 
+      { auth: [Object],
+        app: 'app.example.com',
+        scope: 'health.bc.ca/number' } },
+  credentials: { key: 'NVsXP5rdNcUPSAdRUoh-Hs4WIOemoY-AJXq9H4dCltw' } }
+
+RS Token length: 496
+eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..36sJ-4oWS92tUgMDqjieyw.756F-0n2L1SPms_3RnC4kl57fFReMwhE1cFmeNq3aiIauwilbBhcRQoF4GVRV1RIvs23GWMihYnxp1PJSytxoRBIh7bEYJtKzUc9Yv1ze3LVKyrCCTEYTd8bmQcIoCiYFMh28sRicZ1_jAKRZs3Qo0m67ejgEPZrk4Z4j9-z4hTpka5nYHgT12UN1BAHxxOJnHNxOynr2BbQZuzabXoLN7gKDA3lTRGSLGuj82HTNrLbX_sdWDxsLNVd8-Atoq3Ko6fUMqtErdsQNUIhQs4-lYQvmTPnJY8O7KIe-PtGVAKcR_XzDzHjB8lzXBhlpKmc.h1QkZGV38r84oSxFwGg8nphLvHZyoYs7uSjItjjWH60
+{ iat: 1352841943,
+  iss: 'ix.ca',
+  aud: 'health.bc.ca',
+  prn: 'Kc3yf3Yuvot0XUPF7dvh36l5odgkuish26dLSdDyNd0',
+  'token.a2p3.org': 
+   { auth: { nfc: false, passcode: true, authorization: true },
+     app: 'app.example.com',
+     scope: 'health.bc.ca_number' } }
+
+-------- RS Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS256', kid: 'Wh8E-SbwKbNCN5CyOyjy' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..36sJ-4oWS92tUgMDqjieyw.756F-0n2L1SPms_3RnC4kl57fFReMwhE1cFmeNq3aiIauwilbBhcRQoF4GVRV1RIvs23GWMihYnxp1PJSytxoRBIh7bEYJtKzUc9Yv1ze3LVKyrCCTEYTd8bmQcIoCiYFMh28sRicZ1_jAKRZs3Qo0m67ejgEPZrk4Z4j9-z4hTpka5nYHgT12UN1BAHxxOJnHNxOynr2BbQZuzabXoLN7gKDA3lTRGSLGuj82HTNrLbX_sdWDxsLNVd8-Atoq3Ko6fUMqtErdsQNUIhQs4-lYQvmTPnJY8O7KIe-PtGVAKcR_XzDzHjB8lzXBhlpKmc.h1QkZGV38r84oSxFwGg8nphLvHZyoYs7uSjItjjWH60' } },
+  credentials: { key: 'PsW9khg7lAQRlDJhmrjOwBRufOzDhXhjhYLz3nTHfqI' } }
+
+RS Request length: 899
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzI1NiIsImtpZCI6IldoOEUtU2J3S2JOQ041Q3lPeWp5In0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJ0b2tlbiI6ImV5SjBlWEFpT2lKS1YwVWlMQ0poYkdjaU9pSmthWElpTENKbGJtTWlPaUpCTVRJNFEwSkRLMGhUTWpVMklpd2lhMmxrSWpvaVJIRkVVUzFPVm5OWVVEVnlaRTVqVlZCVFFXUlNWVzlvSW4wLi4zNnNKLTRvV1M5MnRVZ01EcWppZXl3Ljc1NkYtMG4yTDFTUG1zXzNSbkM0a2w1N2ZGUmVNd2hFMWNGbWVOcTNhaUlhdXdpbGJCaGNSUW9GNEdWUlYxUkl2czIzR1dNaWhZbnhwMVBKU3l0eG9SQkloN2JFWUp0S3pVYzlZdjF6ZTNMVkt5ckNDVEVZVGQ4Ym1RY0lvQ2lZRk1oMjhzUmljWjFfakFLUlpzM1FvMG02N2VqZ0VQWnJrNFo0ajktejRoVHBrYTVuWUhnVDEyVU4xQkFIeHhPSm5ITnhPeW5yMkJiUVp1emFiWG9MTjdnS0RBM2xUUkdTTEd1ajgySFROckxiWF9zZFdEeHNMTlZkOC1BdG9xM0tvNmZVTXF0RXJkc1FOVUloUXM0LWxZUXZtVFBuSlk4TzdLSWUtUHRHVkFLY1JfWHpEekhqQjhselhCaGxwS21jLmgxUWtaR1YzOHI4NG9TeEZ3R2c4bnBoTHZIWnlvWXM3dVNqSXRqaldINjAifX0.ThnSaTo4IsS1kbyZNtb4ALy2L7wgj_z0XBesqH_4Pw0
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDK0hTMjU2Iiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..36sJ-4oWS92tUgMDqjieyw.756F-0n2L1SPms_3RnC4kl57fFReMwhE1cFmeNq3aiIauwilbBhcRQoF4GVRV1RIvs23GWMihYnxp1PJSytxoRBIh7bEYJtKzUc9Yv1ze3LVKyrCCTEYTd8bmQcIoCiYFMh28sRicZ1_jAKRZs3Qo0m67ejgEPZrk4Z4j9-z4hTpka5nYHgT12UN1BAHxxOJnHNxOynr2BbQZuzabXoLN7gKDA3lTRGSLGuj82HTNrLbX_sdWDxsLNVd8-Atoq3Ko6fUMqtErdsQNUIhQs4-lYQvmTPnJY8O7KIe-PtGVAKcR_XzDzHjB8lzXBhlpKmc.h1QkZGV38r84oSxFwGg8nphLvHZyoYs7uSjItjjWH60' } }
+
+-------- Agent Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS512', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { passcode: true,
+        authorization: true,
+        returnURL: 'https://app.example.com/return',
+        resources: [Object] } },
+  credentials: { key: 'nWyeZJJcUHCWSlVI-4AQs1JnCwz7xd8gEHlOMD4_pYogj2twWrfqCpAVohMcFUjoCJErCLi6maKz73qySjEJOw' } }
+
+Agent Request length: 454
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzUxMiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ
+{ header: { typ: 'JWS', alg: 'HS512', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { passcode: true,
+        authorization: true,
+        returnURL: 'https://app.example.com/return',
+        resources: [Object] } },
+  signature: 'jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ' }
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': 
+   { passcode: true,
+     authorization: true,
+     returnURL: 'https://app.example.com/return',
+     resources: [ 'people.bc.ca/details', 'health.bc.ca/number' ] } }
+
+-------- IX Token --------- 
+
+{ header: 
+   { typ: 'JWE',
+     alg: 'dir',
+     enc: 'A256CBC+HS512',
+     kid: 'DqDQ-rycvZwKNV6drtkIq2Y' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'as.example.com',
+     aud: 'ix.ca',
+     prn: 'nYXNwK6q9zGSTVB9s_TdeBmE6sfKq0xd1b1DVv_7aog',
+     'token.a2p3.org': 
+      { auth: [Object],
+        sig: 'jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ' } },
+  credentials: { key: 'gj2twWrfqCpAVohMcFUjoCJErCLi6maKz73qySjEJOws142uVs4dkc02FOF42g06VChpvkt2p_gEASZvVoSeZk' } }
+
+AS Token length: 602
+eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..mv6xy18DmeluAFp9iGSNxg.pcQg8_dHCXSLclIXI9Udo0j-Y9MnGbthJmNTZX8ZZYDrEtAUzDD70OveHr99fbX1crDOait5DDzlqQjDmCJXpLyendYcdbLh4aDukQZDuJFeJlep_1Q48B-kp1HZIwgeeEdxBiU9MPLCjSGMtjN1E2IVnFToMntLwYyinfrZI1A3o2CEmH7fDrjVMRG6L8S0BYtdKTK-1aNz9ywQcSb_c6ZN3NIzi4PtweFhlidEkHHSXawlang6NJkODO_iNrDX5hEvD1JGh4Z69CSTYdR-00zFDeNz5uqR75U24-jFhJvIIyBxKbYDMmiB2IpKuTCt9ITDjGrrS9631OfjkuhuuYice1E5vDju2E8f63LIioicUcMwN7nLiCKJZHJ35Tso.tHhdGn8NNpEnBx2D0KLcXuoGeFtOPHmwK5x70TJ-djYGltYqWEfEeQQYkXDWm03ynA9MSA33l8bPNM7m_0_EEw
+{ iat: 1352841943,
+  iss: 'as.example.com',
+  aud: 'ix.ca',
+  prn: 'nYXNwK6q9zGSTVB9s_TdeBmE6sfKq0xd1b1DVv_7aog',
+  'token.a2p3.org': 
+   { auth: { nfc: false, passcode: true, authorization: true },
+     sig: 'jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ' } }
+
+-------- IX Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS512', kid: 'f-y9zuV0-kryL5DV_xZo' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': 
+      { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..mv6xy18DmeluAFp9iGSNxg.pcQg8_dHCXSLclIXI9Udo0j-Y9MnGbthJmNTZX8ZZYDrEtAUzDD70OveHr99fbX1crDOait5DDzlqQjDmCJXpLyendYcdbLh4aDukQZDuJFeJlep_1Q48B-kp1HZIwgeeEdxBiU9MPLCjSGMtjN1E2IVnFToMntLwYyinfrZI1A3o2CEmH7fDrjVMRG6L8S0BYtdKTK-1aNz9ywQcSb_c6ZN3NIzi4PtweFhlidEkHHSXawlang6NJkODO_iNrDX5hEvD1JGh4Z69CSTYdR-00zFDeNz5uqR75U24-jFhJvIIyBxKbYDMmiB2IpKuTCt9ITDjGrrS9631OfjkuhuuYice1E5vDju2E8f63LIioicUcMwN7nLiCKJZHJ35Tso.tHhdGn8NNpEnBx2D0KLcXuoGeFtOPHmwK5x70TJ-djYGltYqWEfEeQQYkXDWm03ynA9MSA33l8bPNM7m_0_EEw',
+        request: 'eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzUxMiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ' } },
+  credentials: { key: 'nWyeZJJcUHCWSlVI-4AQs1JnCwz7xd8gEHlOMD4_pYo9fXXgbjMtMLqX1Sqf5wMplGLndTOO2wTOBAfWqQxxxo' } }
+
+IX Request length: 1706
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzUxMiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJ0b2tlbiI6ImV5SjBlWEFpT2lKS1YwVWlMQ0poYkdjaU9pSmthWElpTENKbGJtTWlPaUpCTWpVMlEwSkRLMGhUTlRFeUlpd2lhMmxrSWpvaVJIRkVVUzF5ZVdOMlduZExUbFkyWkhKMGEwbHhNbGtpZlEuLm12Nnh5MThEbWVsdUFGcDlpR1NOeGcucGNRZzhfZEhDWFNMY2xJWEk5VWRvMGotWTlNbkdidGhKbU5UWlg4WlpZRHJFdEFVekRENzBPdmVIcjk5ZmJYMWNyRE9haXQ1RER6bHFRakRtQ0pYcEx5ZW5kWWNkYkxoNGFEdWtRWkR1SkZlSmxlcF8xUTQ4Qi1rcDFIWkl3Z2VlRWR4QmlVOU1QTENqU0dNdGpOMUUySVZuRlRvTW50THdZeWluZnJaSTFBM28yQ0VtSDdmRHJqVk1SRzZMOFMwQll0ZEtUSy0xYU56OXl3UWNTYl9jNlpOM05Jemk0UHR3ZUZobGlkRWtISFNYYXdsYW5nNk5Ka09ET19pTnJEWDVoRXZEMUpHaDRaNjlDU1RZZFItMDB6RkRlTno1dXFSNzVVMjQtakZoSnZJSXlCeEtiWURNbWlCMklwS3VUQ3Q5SVREakdyclM5NjMxT2Zqa3VodXVZaWNlMUU1dkRqdTJFOGY2M0xJaW9pY1VjTXdON25MaUNLSlpISjM1VHNvLnRIaGRHbjhOTnBFbkJ4MkQwS0xjWHVvR2VGdE9QSG13SzV4NzBUSi1kallHbHRZcVdFZkVlUVFZa1hEV20wM3luQTlNU0EzM2w4YlBOTTdtXzBfRUV3IiwicmVxdWVzdCI6ImV5SjBlWEFpT2lKS1YxTWlMQ0poYkdjaU9pSklVelV4TWlJc0ltdHBaQ0k2SW1ZdGVUbDZkVll3TFd0eWVVdzFSRlpmZUZwdkluMC5leUpwWVhRaU9qRXpOVEk0TkRFNU5ETXNJbWx6Y3lJNkltRndjQzVsZUdGdGNHeGxMbU52YlNJc0ltRjFaQ0k2SW1sNExtTmhJaXdpY21WeGRXVnpkQzVoTW5BekxtOXlaeUk2ZXlKd1lYTnpZMjlrWlNJNmRISjFaU3dpWVhWMGFHOXlhWHBoZEdsdmJpSTZkSEoxWlN3aWNtVjBkWEp1VlZKTUlqb2lhSFIwY0hNNkx5OWhjSEF1WlhoaGJYQnNaUzVqYjIwdmNtVjBkWEp1SWl3aWNtVnpiM1Z5WTJWeklqcGJJbkJsYjNCc1pTNWlZeTVqWVM5a1pYUmhhV3h6SWl3aWFHVmhiSFJvTG1KakxtTmhMMjUxYldKbGNpSmRmWDAuak15TGg4T3VSdno0QzZLV2NnOUdpelg4dVdkTW8zaUxPLW01ZEEzTW1Hek9pc21qNXU2UW1mWWJqek8tNVM4ZUxWVFNUQkJ5YUNEcllZUXlqWmJXc1EifX0.mjjMVGpQh-nZjKNE1SRxhK_GW05d_tKTQTVhjHFGl_Ko1jY4meiueYiB2JZOEZmV7ddZ5aa2m4RhfpJUWMIdsw
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': 
+   { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1yeWN2WndLTlY2ZHJ0a0lxMlkifQ..mv6xy18DmeluAFp9iGSNxg.pcQg8_dHCXSLclIXI9Udo0j-Y9MnGbthJmNTZX8ZZYDrEtAUzDD70OveHr99fbX1crDOait5DDzlqQjDmCJXpLyendYcdbLh4aDukQZDuJFeJlep_1Q48B-kp1HZIwgeeEdxBiU9MPLCjSGMtjN1E2IVnFToMntLwYyinfrZI1A3o2CEmH7fDrjVMRG6L8S0BYtdKTK-1aNz9ywQcSb_c6ZN3NIzi4PtweFhlidEkHHSXawlang6NJkODO_iNrDX5hEvD1JGh4Z69CSTYdR-00zFDeNz5uqR75U24-jFhJvIIyBxKbYDMmiB2IpKuTCt9ITDjGrrS9631OfjkuhuuYice1E5vDju2E8f63LIioicUcMwN7nLiCKJZHJ35Tso.tHhdGn8NNpEnBx2D0KLcXuoGeFtOPHmwK5x70TJ-djYGltYqWEfEeQQYkXDWm03ynA9MSA33l8bPNM7m_0_EEw',
+     request: 'eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzUxMiIsImtpZCI6ImYteTl6dVYwLWtyeUw1RFZfeFpvIn0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJwYXNzY29kZSI6dHJ1ZSwiYXV0aG9yaXphdGlvbiI6dHJ1ZSwicmV0dXJuVVJMIjoiaHR0cHM6Ly9hcHAuZXhhbXBsZS5jb20vcmV0dXJuIiwicmVzb3VyY2VzIjpbInBlb3BsZS5iYy5jYS9kZXRhaWxzIiwiaGVhbHRoLmJjLmNhL251bWJlciJdfX0.jMyLh8OuRvz4C6KWcg9GizX8uWdMo3iLO-m5dA3MmGzOismj5u6QmfYbjzO-5S8eLVTSTBByaCDrYYQyjZbWsQ' } }
+
+-------- RS Token --------- 
+
+{ header: 
+   { typ: 'JWE',
+     alg: 'dir',
+     enc: 'A256CBC+HS512',
+     kid: 'DqDQ-NVsXP5rdNcUPSAdRUoh' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'ix.ca',
+     aud: 'health.bc.ca',
+     prn: 'Kc3yf3Yuvot0XUPF7dvh36l5odgkuish26dLSdDyNd0',
+     'token.a2p3.org': 
+      { auth: [Object],
+        app: 'app.example.com',
+        scope: 'health.bc.ca/number' } },
+  credentials: { key: 'NVsXP5rdNcUPSAdRUoh-Hs4WIOemoY-AJXq9H4dCltwgj2twWrfqCpAVohMcFUjoCJErCLi6maKz73qySjEJOw' } }
+
+RS Token length: 539
+eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..jDLTluXIOHh_akWx_5o54g.XAS4zEzgDY-r6sItsedX0wG9PN0I8tittIUZlw7a90WzLlr602LjqfvnWU7MT87qB-MhUyzLJ8TqvfART8RegcZNYjXzY7iwD-20VwSoHhXrGH6EGpyu63z8UrFEntTn5AELz7SDxMtloNw13SkKjZUfoqlBIBFT62n9aGNhihqyH2Qebx0mtw8IRtXIJQ5ul1i5Z5ctcZeNaD6Siej_Cm1wRoZibKdTXPmB4thyMvF5O4JSFGkTSLKUd2JAUouWjHrsM69_SDFQ1CK6h9d21Dh6Xuz_DbabxILQhmJ5tA6I7AbPupPYYwA8qUqjTeyl.CnGNwn7-z8SbRxpqEbASzX-5xxSec0vtNkIR98jGhgJuhI-st7YHPc7rLJI9BruzJxqTkzkT7CpfjvfUul0bYw
+{ iat: 1352841943,
+  iss: 'ix.ca',
+  aud: 'health.bc.ca',
+  prn: 'Kc3yf3Yuvot0XUPF7dvh36l5odgkuish26dLSdDyNd0',
+  'token.a2p3.org': 
+   { auth: { nfc: false, passcode: true, authorization: true },
+     app: 'app.example.com',
+     scope: 'health.bc.ca_number' } }
+
+-------- RS Request --------- 
+
+{ header: { typ: 'JWS', alg: 'HS512', kid: 'Wh8E-SbwKbNCN5CyOyjy' },
+  payload: 
+   { iat: 1352841943,
+     iss: 'app.example.com',
+     aud: 'ix.ca',
+     'request.a2p3.org': { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..jDLTluXIOHh_akWx_5o54g.XAS4zEzgDY-r6sItsedX0wG9PN0I8tittIUZlw7a90WzLlr602LjqfvnWU7MT87qB-MhUyzLJ8TqvfART8RegcZNYjXzY7iwD-20VwSoHhXrGH6EGpyu63z8UrFEntTn5AELz7SDxMtloNw13SkKjZUfoqlBIBFT62n9aGNhihqyH2Qebx0mtw8IRtXIJQ5ul1i5Z5ctcZeNaD6Siej_Cm1wRoZibKdTXPmB4thyMvF5O4JSFGkTSLKUd2JAUouWjHrsM69_SDFQ1CK6h9d21Dh6Xuz_DbabxILQhmJ5tA6I7AbPupPYYwA8qUqjTeyl.CnGNwn7-z8SbRxpqEbASzX-5xxSec0vtNkIR98jGhgJuhI-st7YHPc7rLJI9BruzJxqTkzkT7CpfjvfUul0bYw' } },
+  credentials: { key: 'PsW9khg7lAQRlDJhmrjOwBRufOzDhXhjhYLz3nTHfqIbYoDZ4v_zFL5r4kYVxmLEpisxFLtCRotnru98wXER-E' } }
+
+RS Request length: 999
+eyJ0eXAiOiJKV1MiLCJhbGciOiJIUzUxMiIsImtpZCI6IldoOEUtU2J3S2JOQ041Q3lPeWp5In0.eyJpYXQiOjEzNTI4NDE5NDMsImlzcyI6ImFwcC5leGFtcGxlLmNvbSIsImF1ZCI6Iml4LmNhIiwicmVxdWVzdC5hMnAzLm9yZyI6eyJ0b2tlbiI6ImV5SjBlWEFpT2lKS1YwVWlMQ0poYkdjaU9pSmthWElpTENKbGJtTWlPaUpCTWpVMlEwSkRLMGhUTlRFeUlpd2lhMmxrSWpvaVJIRkVVUzFPVm5OWVVEVnlaRTVqVlZCVFFXUlNWVzlvSW4wLi5qRExUbHVYSU9IaF9ha1d4XzVvNTRnLlhBUzR6RXpnRFktcjZzSXRzZWRYMHdHOVBOMEk4dGl0dElVWmx3N2E5MFd6TGxyNjAyTGpxZnZuV1U3TVQ4N3FCLU1oVXl6TEo4VHF2ZkFSVDhSZWdjWk5Zalh6WTdpd0QtMjBWd1NvSGhYckdINkVHcHl1NjN6OFVyRkVudFRuNUFFTHo3U0R4TXRsb053MTNTa0tqWlVmb3FsQklCRlQ2Mm45YUdOaGlocXlIMlFlYngwbXR3OElSdFhJSlE1dWwxaTVaNWN0Y1plTmFENlNpZWpfQ20xd1JvWmliS2RUWFBtQjR0aHlNdkY1TzRKU0ZHa1RTTEtVZDJKQVVvdVdqSHJzTTY5X1NERlExQ0s2aDlkMjFEaDZYdXpfRGJhYnhJTFFobUo1dEE2STdBYlB1cFBZWXdBOHFVcWpUZXlsLkNuR053bjctejhTYlJ4cHFFYkFTelgtNXh4U2VjMHZ0TmtJUjk4akdoZ0p1aEktc3Q3WUhQYzdyTEpJOUJydXpKeHFUa3prVDdDcGZqdmZVdWwwYll3In19.ebrKBog0u96mbMf6YLT7A129HBVKbJCkEVZF2qacCVcAtckDsjGBXJAbTzvRWzshWAcMtvBajF-N-xQYvMOO_w
+{ iat: 1352841943,
+  iss: 'app.example.com',
+  aud: 'ix.ca',
+  'request.a2p3.org': { token: 'eyJ0eXAiOiJKV0UiLCJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDK0hTNTEyIiwia2lkIjoiRHFEUS1OVnNYUDVyZE5jVVBTQWRSVW9oIn0..jDLTluXIOHh_akWx_5o54g.XAS4zEzgDY-r6sItsedX0wG9PN0I8tittIUZlw7a90WzLlr602LjqfvnWU7MT87qB-MhUyzLJ8TqvfART8RegcZNYjXzY7iwD-20VwSoHhXrGH6EGpyu63z8UrFEntTn5AELz7SDxMtloNw13SkKjZUfoqlBIBFT62n9aGNhihqyH2Qebx0mtw8IRtXIJQ5ul1i5Z5ctcZeNaD6Siej_Cm1wRoZibKdTXPmB4thyMvF5O4JSFGkTSLKUd2JAUouWjHrsM69_SDFQ1CK6h9d21Dh6Xuz_DbabxILQhmJ5tA6I7AbPupPYYwA8qUqjTeyl.CnGNwn7-z8SbRxpqEbASzX-5xxSec0vtNkIR98jGhgJuhI-st7YHPc7rLJI9BruzJxqTkzkT7CpfjvfUul0bYw' } }
